@@ -10,5 +10,5 @@ The application has two operating solutions
 connect to local mobile clients via wifi or bluetooth.
 
 - Running the application using cloud base solution like aws, where
-mulitle tournament orgaizers can use the app to manage tournmanets
+multiple tournament orgaizers can use the app to manage tournmanets
 and mobile clients can connect to it using the internet.
