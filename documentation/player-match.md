@@ -15,5 +15,4 @@ Elements
 
 Diagrams
 --
-![alt text](../Wireframes%20(Fireworks)/Player-Match.png
-)
+![alt text](wireframes%20%28Fireworks%29/Player-Match.png)
