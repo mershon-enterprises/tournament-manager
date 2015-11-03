@@ -3,15 +3,21 @@ player-match
 
 Purpose
 --
-The purpose
+This is the screen that will be active for players during an event
 
 Elements
 --
-* something
-* another Thing:
-    * sub thing 1
-    * sub thing 2
-      * sub sub thing 1
+* Avatar
+    * Shows that users icon
+    * Tap to go to that user's profile
+* Location
+    * Dynamic seating
+    * Have a letter before/after it to represent if your placement was manual or random
+* Tournament Announcement
+    * The organizer for the event can push announcements here, only visable by players
+      * Cannot be edited by players
+* Report Match
+    * Tap to go to "Player - Report Match" screen
 
 Diagrams
 --
