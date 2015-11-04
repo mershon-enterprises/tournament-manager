@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+div.player-banner{
+  margin-left: 10%;
+}
+
+div.vs{
+  float: left;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-weight: bold;
+  font-size: 300%
+}
