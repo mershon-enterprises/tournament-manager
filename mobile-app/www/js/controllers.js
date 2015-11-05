@@ -44,6 +44,12 @@ angular.module('starter.controllers', [])
 .controller('MatchesCtrl', function($scope, matches) {
   $scope.matches = matches;
   $scope.listCanSwipe = true;
+  $scope.predicate = 'id';
+  $scope.reverse = false;
+  $scope.flipReverse = function(){
+    $scope.reverse = !$scope.reverse;
+  };
+
 })
 
 .controller('MatchCtrl', function($scope, match) {

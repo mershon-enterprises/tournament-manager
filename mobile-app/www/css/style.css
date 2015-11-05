@@ -8,5 +8,28 @@ div.vs{
   padding-left: 5%;
   padding-right: 5%;
   font-weight: bold;
-  font-size: 300%
+  font-size: 300%;
+}
+
+ion-content.listBox{
+  margin-top:0%;
+  margin-left:2%;
+  width: 80%;
+  height: 35%;
+  border-width: 6px;
+  border-style: outset;
+}
+
+h3.tournamentAnnouncements{
+  margin-top: 28%;
+  margin-left: 38%;
+}
+
+ion-content.infoBox{
+  margin-top:25%;
+  margin-left:25%;
+  width: 50%;
+  height: 30%;
+  border-width: 6px;
+  border-style: outset;
 }

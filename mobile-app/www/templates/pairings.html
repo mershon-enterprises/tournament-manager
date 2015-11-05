@@ -1,0 +1,21 @@
+<ion-view view-title="Matches">
+  <ion-content class="listBox" overflow-scroll="false">
+    <ion-list>
+      <ion-item ng-repeat="match in matches | orderBy:predicate:reverse" href="#/app/matches/{{match.id}}">
+        {{match.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+  <br>
+   <h3 class="tournamentAnnouncements">
+     Tournament Announcements
+   </h3>
+
+  <ion-content class="infoBox">
+    Relevant text here.
+  </ion-content>
+
+  <button class="button button-positive" ng-click="flipReverse()">
+    Change Sort (reverses list)
+  </button>
+</ion-view>

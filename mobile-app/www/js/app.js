@@ -109,6 +109,36 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
+    .state('app.matches.pairings', {
+      url: '/pairings',
+      views: {
+        'pairings': {
+          templateUrl: 'templates/pairings.html',
+          controller: 'MatchesCtrl',
+          resolve: {
+            matches: function(MatchesService) {
+              return MatchesService.getMatches();
+            }
+          }
+        }
+      }
+    })
+
+    .state('app.matches.standings', {
+      url: '/standings',
+      views: {
+        'standings': {
+          templateUrl: 'templates/standings.html',
+          controller: 'MatchesCtrl',
+          resolve: {
+            matches: function(MatchesService) {
+              return MatchesService.getMatches();
+            }
+          }
+        }
+      }
+    })
+
   .state('app.single', {
     url: '/matches/:match',
     views: {
