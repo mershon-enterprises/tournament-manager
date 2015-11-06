@@ -24,31 +24,93 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 .service('MatchesService',function($q){
   return {
+    players:[
+      {
+        id: '1',
+        name: 'Gomez',
+        rank: '1'
+      },
+      {
+        id: '2',
+        name: 'Dot',
+        rank: '2'
+      },
+      {
+        id: '3',
+        name: 'David',
+        rank: '3'
+      },
+      {
+        id: '4',
+        name: 'Huey',
+        rank: '4'
+      },
+      {
+        id: '5',
+        name: 'Rhys',
+        rank: '5'
+      },
+      {
+        id: '6',
+        name: 'Sasha',
+        rank: '6'
+      },
+      {
+        id: '7',
+        name: 'Max',
+        rank: '7'
+      },
+      {
+        id: '8',
+        name: 'Chloe',
+        rank: '8'
+      },
+      {
+        id: '9',
+        name: 'Sam',
+        rank: '9'
+      },
+      {
+        id: '10',
+        name: 'Smith',
+        rank: '10'
+      }
+    ],
     matches: [
       {
         id: '1',
         title: 'Game 1',
-        table: 'Table 1'
+        table: 'Table 1',
+        player1: {name: 'Gomez'},
+        player2: {name: 'Dot'}
       },
       {
         id: '2',
         title: 'Game 2',
-        table: 'Table 2'
+        table: 'Table 2',
+        player1: {name: 'Max'},
+        player2: {name: 'Chloe'}
       },
       {
         id: '3',
         title: 'Game 3',
-        table: 'Table 3'
+        table: 'Table 3',
+        player1: {name: 'David'},
+        player2: {name: 'Huey'}
       },
       {
         id: '4',
         title: 'Game 4',
-        table: 'Table 4'
+        table: 'Table 4',
+        player1: {name: 'Rhys'},
+        player2: {name: 'Sasha'}
       },
       {
         id: '5',
         title: 'Game 5',
-        table: 'Table 5'
+        table: 'Table 5',
+        player1: {name: 'Smith'},
+        player2: {name: 'Samantha'}
       }
     ],
     getMatches: function() {
@@ -58,6 +120,17 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       var dfd = $q.defer();
       this.matches.forEach(function(match) {
         if (match.id === matchId) dfd.resolve(match);
+      });
+
+      return dfd.promise;
+    },
+    getPlayers: function() {
+      return this.players;
+    },
+    getPlayer: function(playerId) {
+      var dfd = $q.defer();
+      this.players.forEach(function(player) {
+        if (player.id === playerId) dfd.resolve(player);
       });
 
       return dfd.promise;
@@ -132,7 +205,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'MatchesCtrl',
           resolve: {
             matches: function(MatchesService) {
-              return MatchesService.getMatches();
+              return MatchesService.getPlayers();
             }
           }
         }

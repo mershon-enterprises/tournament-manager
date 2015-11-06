@@ -1,8 +1,12 @@
 <ion-view view-title="Matches">
   <ion-content class="listBox" overflow-scroll="false">
     <ion-list>
-      <ion-item ng-repeat="match in matches | orderBy:predicate:reverse" href="#/app/matches/{{match.id}}">
-        {{match.title}}
+  <!-- Really mean player here, but there are some current controller issues -->
+      <ion-item ng-repeat="match in matches | orderBy:rank ">
+        <div class = "row">
+          <div class="col col-25">{{match.rank}}</div>
+          <div class="col">{{match.name}}</div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
@@ -15,7 +19,7 @@
     Relevant text here.
   </ion-content>
 
-  <button class="button button-positive">
+  <button class="button button-positive" ng-click="openModal()">
     Drop From Tournament (modal not here)
   </button>
 </ion-view>

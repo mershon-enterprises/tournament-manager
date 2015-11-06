@@ -2,7 +2,12 @@
   <ion-content class="listBox" overflow-scroll="false">
     <ion-list>
       <ion-item ng-repeat="match in matches | orderBy:predicate:reverse" href="#/app/matches/{{match.id}}">
-        {{match.title}}
+        <div class="row">
+           <div class="col col-25">{{match.table}}</div>
+           <div class="col">{{match.player1.name}}</div>
+           <div class="col">VS</div>
+           <div class="col">{{match.player2.name}}</div>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
@@ -15,7 +20,7 @@
     Relevant text here.
   </ion-content>
 
-  <button class="button button-positive" ng-click="flipReverse()">
-    Change Sort (reverses list)
+  <button class="button button-positive" ng-click="changeSortMethod()">
+    Change Sort ({{predicate}})
   </button>
 </ion-view>
