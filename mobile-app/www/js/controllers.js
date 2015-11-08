@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/confirm-drop-modal.html', {
+  $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
@@ -41,30 +41,11 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('MatchesCtrl', function($scope, matches, $ionicModal) {
-  $scope.matches = matches;
+.controller('PlayersCtrl', function($scope, players, $ionicModal) {
+  $scope.players = players;
   $scope.listCanSwipe = true;
-  $scope.sortMethods = ['id','player1.name','player2.name'];
-  $scope.methodNo = 0;
-  $scope.predicate = $scope.sortMethods[$scope.methodNo];
-  $scope.reverse = false;
 
-  $scope.flipReverse = function(){
-    $scope.reverse = !$scope.reverse;
-  };
-  $scope.changeSortMethod = function(){
-    $scope.methodNo += 1;
-    if ($scope.methodNo >=3)
-    {$scope.methodNo = 0;}
-    $scope.predicate = $scope.sortMethods[$scope.methodNo];
-  };
-
-  $scope.contact = {
-    name: 'Mittens Cat',
-    info: 'Tap anywhere on the card to open the modal'
-  };
-
-  $ionicModal.fromTemplateUrl('contact-modal.html', {
+  $ionicModal.fromTemplateUrl('templates/confirm-drop-modal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
@@ -82,6 +63,26 @@ angular.module('starter.controllers', [])
   $scope.$on('$destroy', function() {
     $scope.modal.remove();
   });
+
+})
+
+.controller('MatchesCtrl', function($scope, matches) {
+  $scope.matches = matches;
+  $scope.listCanSwipe = true;
+  $scope.sortMethods = ['id','player1.name','player2.name'];
+  $scope.methodNo = 0;
+  $scope.predicate = $scope.sortMethods[$scope.methodNo];
+  $scope.reverse = false;
+
+  $scope.flipReverse = function(){
+    $scope.reverse = !$scope.reverse;
+  };
+  $scope.changeSortMethod = function(){
+    $scope.methodNo += 1;
+    if ($scope.methodNo >=3)
+    {$scope.methodNo = 0;}
+    $scope.predicate = $scope.sortMethods[$scope.methodNo];
+  };
 
 })
 

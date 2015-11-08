@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.service('MatchesService',function($q){
+.service('PlayersService',function($q){
   return {
     players:[
       {
@@ -76,6 +76,22 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         rank: '10'
       }
     ],
+    getPlayers: function() {
+      return this.players;
+    },
+    getPlayer: function(playerId) {
+      var dfd = $q.defer();
+      this.players.forEach(function(player) {
+        if (player.id === playerId) dfd.resolve(player);
+      });
+
+      return dfd.promise;
+    }
+  };
+})
+
+.service('MatchesService',function($q){
+  return {
     matches: [
       {
         id: '1',
@@ -120,17 +136,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       var dfd = $q.defer();
       this.matches.forEach(function(match) {
         if (match.id === matchId) dfd.resolve(match);
-      });
-
-      return dfd.promise;
-    },
-    getPlayers: function() {
-      return this.players;
-    },
-    getPlayer: function(playerId) {
-      var dfd = $q.defer();
-      this.players.forEach(function(player) {
-        if (player.id === playerId) dfd.resolve(player);
       });
 
       return dfd.promise;
@@ -202,10 +207,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       views: {
         'standings': {
           templateUrl: 'templates/standings.html',
-          controller: 'MatchesCtrl',
+          controller: 'PlayersCtrl',
           resolve: {
-            matches: function(MatchesService) {
-              return MatchesService.getPlayers();
+            players: function(PlayersService) {
+              return PlayersService.getPlayers();
             }
           }
         }

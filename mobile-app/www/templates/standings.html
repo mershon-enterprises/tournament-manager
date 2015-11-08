@@ -2,24 +2,32 @@
   <ion-content class="listBox" overflow-scroll="false">
     <ion-list>
   <!-- Really mean player here, but there are some current controller issues -->
-      <ion-item ng-repeat="match in matches | orderBy:rank ">
+      <ion-item ng-repeat="player in players | orderBy:rank ">
         <div class = "row">
-          <div class="col col-25">{{match.rank}}</div>
-          <div class="col">{{match.name}}</div>
+          <div class="col col-25">{{player.rank}}</div>
+          <div class="col">{{player.name}}</div>
         </div>
       </ion-item>
     </ion-list>
   </ion-content>
-  <br>
-   <h3 class="tournamentAnnouncements">
+
+   <br>
+   <div class="tournamentAnnouncements">
+   <h3 >
      Tournament Announcements
    </h3>
+
 
   <ion-content class="infoBox">
     Relevant text here.
   </ion-content>
+  </div>
+
+
+
+
 
   <button class="button button-positive" ng-click="openModal()">
-    Drop From Tournament (modal not here)
+    Drop From Tournament
   </button>
 </ion-view>
