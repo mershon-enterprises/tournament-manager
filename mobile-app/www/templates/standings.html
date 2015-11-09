@@ -1,7 +1,7 @@
 <ion-view view-title="Matches">
-  <ion-content class="listBox" overflow-scroll="false">
+  <!-- List of players -->
+  <ion-scroll class="listBox" zooming="false" direction="xy">
     <ion-list>
-  <!-- Really mean player here, but there are some current controller issues -->
       <ion-item ng-repeat="player in players | orderBy:rank ">
         <div class = "row">
           <div class="col col-25">{{player.rank}}</div>
@@ -9,25 +9,29 @@
         </div>
       </ion-item>
     </ion-list>
-  </ion-content>
+  </ion-scroll>
 
-   <br>
-   <div class="tournamentAnnouncements">
-   <h3 >
-     Tournament Announcements
-   </h3>
-
-
-  <ion-content class="infoBox">
-    Relevant text here.
-  </ion-content>
+  <!--Torunament Announcements box-->
+  <div class="row" >
+     <div class="col "></div>
+     <div class="col col-50">
+       <h3 class="tournamentAnnouncements">
+         Tournament Announcements
+       </h3>
+     </div>
+     <div class="col "></div>
   </div>
 
-
-
-
+  <div class="row" style="height: 25%">
+    <div class="col col-25"></div>
+    <div class="infoBox col">
+      Relevant text here.
+    </div>
+    <div class="col col-25"></div>
+  </div>
 
   <button class="button button-positive" ng-click="openModal()">
     Drop From Tournament
   </button>
+
 </ion-view>

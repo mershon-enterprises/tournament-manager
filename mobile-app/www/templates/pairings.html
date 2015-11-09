@@ -1,5 +1,6 @@
 <ion-view view-title="Matches">
-  <ion-content class="listBox" overflow-scroll="false">
+
+  <ion-scroll class="listBox" zooming="false" direction="xy">
     <ion-list>
       <ion-item ng-repeat="match in matches | orderBy:predicate:reverse" href="#/app/matches/{{match.id}}">
         <div class="row">
@@ -10,16 +11,25 @@
         </div>
       </ion-item>
     </ion-list>
-  </ion-content>
-<br>
+  </ion-scroll>
 
-   <h3 class="tournamentAnnouncements">
-     Tournament Announcements
-   </h3>
+  <div class="row" >
+     <div class="col "></div>
+     <div class="col col-50">
+       <h3 class="tournamentAnnouncements">
+         Tournament Announcements
+       </h3>
+     </div>
+     <div class="col "></div>
+  </div>
 
-  <ion-content class="infoBox">
-    Relevant text here.
-  </ion-content>
+  <div class="row" style="height: 25%">
+    <div class="col col-25"></div>
+    <div class="infoBox col">
+      Relevant text here.
+    </div>
+    <div class="col col-25"></div>
+  </div>
 
   <button class="button button-positive" ng-click="changeSortMethod()">
     Change Sort ({{predicate}})
