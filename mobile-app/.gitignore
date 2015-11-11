@@ -4,4 +4,8 @@
 node_modules/
 platforms/
 plugins/
-www/lib/*
+mobile-app/www/lib/angular
+mobile-app/www/lib/angular-animate
+mobile-app/www/lib/angular-sanitize
+mobile-app/www/lib/angular-ui-router
+mobile-app/www/lib/ionic

@@ -1,37 +1,47 @@
-<ion-view view-title="Matches">
-  <!-- List of players -->
+<ion-view view-title="Matches" style="margin-top:55px">
+  <div style="margin-top:8vh">
   <ion-scroll class="listBox" zooming="false" direction="xy">
-    <ion-list>
-      <ion-item ng-repeat="player in players | orderBy:rank ">
-        <div class = "row">
-          <div class="col col-25">{{player.rank}}</div>
-          <div class="col">{{player.name}}</div>
+    <ion-list >
+      <ion-item ng-repeat="player in players | orderBy:rank" href="#/app/matches/{{match.id}}">
+        <div class="row noPadding">
+          <div class="col col-25 noPadding">{{player.rank}}</div>
+          <div class="col noPadding"> {{player.name}}</div>
         </div>
       </ion-item>
     </ion-list>
   </ion-scroll>
 
-  <!--Torunament Announcements box-->
-  <div class="row" >
-     <div class="col "></div>
-     <div class="col col-75">
+  <div class="row noPadding" >
+     <div class="col noPadding"></div>
+     <div class="col col-75 noPadding">
        <h4 class="tournamentAnnouncements">
          Tournament Announcements
        </h4>
      </div>
-     <div class="col "></div>
+     <div class="col noPadding"></div>
   </div>
 
-  <div class="row" style="height: 24%">
-    <div class="col"></div>
-    <div class="infoBox col-75 col">
+  <div class="row noPadding">
+    <div class="infoBox col noPadding">
       Relevant text here.
     </div>
-    <div class="col"></div>
   </div>
 
-  <button class="button button-positive" ng-click="openModal()">
+  <button class="button button-positive noPadding" ng-click="openModal()">
     Drop From Tournament
   </button>
+</div>
 
+  <ion-pull-up-footer class="bar-positive" on-expand="footerExpand()" on-collapse="footerCollapse()">
+      <ion-pull-up-bar>
+          <h1 class="title" ion-pull-up-trigger>Announcements</h1>
+      </ion-pull-up-bar>
+      <ion-pull-up-content scroll="false">
+        <div class="row noPadding" style="height: 24%">
+          <div class="infoBox col">
+            Relevant text here.
+          </div>
+        </div>
+      </ion-pull-up-content>
+  </ion-pull-up-footer>
 </ion-view>

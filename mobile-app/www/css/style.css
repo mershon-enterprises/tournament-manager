@@ -11,12 +11,19 @@ div.vs{
   font-size: 300%;
 }
 
+.noPadding{
+ padding-top: 0%;
+ padding-bottom: 0%;
+ margin-bottom:0%;
+ margin-top: 0%;
+}
+
 .listBox{
   margin-left:0%;
-  margin-top: 35%;
+  margin-top: 10vh;
   width: 100%;
-  height: 35%;
-  border-width: 6px;
+  height: 35vh;
+  border-width: 2px;
   border-style: outset;
 }
 
@@ -25,6 +32,9 @@ div.vs{
 }
 
 .infoBox{
-  border-width: 6px;
+  border-width: 4px;
+  height: 20vh;
   border-style: outset;
+  background-color: white;
+  color: black;
 }
