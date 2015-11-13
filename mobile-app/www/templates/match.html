@@ -1,28 +1,22 @@
-
-
 <ion-view view-title="{{match.title}}">
   <ion-content>
 
     <h1>{{match.title}}</h1>
-    <div class="player-banner">
+    <div class="row">
 
-       <div style="float: left"><img src="img/avatar.jpg"/><br>Avatar A
+       <div class="col"><img src="img/avatar.jpg"/><br>{{match.player1.name}}
        </div>
-       <div class="vs">VS
+       <div class="col vs col-25">VS
        </div>
-       <div style="float: left"><img src="img/avatar.jpg"/><br>Avatar B
+       <div class="col"><img src="img/avatar.jpg"/><br>{{match.player2.name}}
        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <h2>{{match.table}}</h2>
+
     <button class="button button-positive" ng-click="$ionicGoBack()">
       Back
     </button>
+
   </ion-content>
 </ion-view>

@@ -69,7 +69,7 @@ angular.module('starter.controllers', [])
 .controller('MatchesCtrl', function($scope, matches) {
   $scope.matches = matches;
   $scope.listCanSwipe = true;
-  $scope.sortMethods = ['id','player1.name','player2.name'];
+  $scope.sortMethods = ['table','player1.name','player2.name'];
   $scope.methodNo = 0;
   $scope.predicate = $scope.sortMethods[$scope.methodNo];
   $scope.reverse = false;

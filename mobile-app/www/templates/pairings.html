@@ -13,37 +13,10 @@
     </ion-list>
   </ion-scroll>
 
-  <div class="row noPadding" >
-     <div class="col noPadding"></div>
-     <div class="col col-75 noPadding">
-       <h4 class="tournamentAnnouncements">
-         Tournament Announcements
-       </h4>
-     </div>
-     <div class="col noPadding"></div>
-  </div>
-
-  <div class="row noPadding">
-    <div class="infoBox col noPadding">
-      Relevant text here.
-    </div>
-  </div>
-
   <button class="button button-positive" ng-click="changeSortMethod()">
-    Change Sort ({{predicate}})
+    Change  Sort ({{predicate}})
   </button>
 </div>
 
-  <ion-pull-up-footer class="bar-positive" on-expand="footerExpand()" on-collapse="footerCollapse()">
-      <ion-pull-up-bar>
-          <h1 class="title" ion-pull-up-trigger>Announcements</h1>
-      </ion-pull-up-bar>
-      <ion-pull-up-content scroll="false">
-        <div class="row noPadding" style="height: 24%">
-          <div class="infoBox col">
-            Relevant text here.
-          </div>
-        </div>
-      </ion-pull-up-content>
-  </ion-pull-up-footer>
+
 </ion-view>
