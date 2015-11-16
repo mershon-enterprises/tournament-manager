@@ -1,0 +1,19 @@
+<ion-view view-title="Matches" style="margin-top:55px">
+  <div style="margin-top:8vh">
+  <ion-scroll class="listBox" zooming="false" direction="xy">
+    <ion-list >
+      <ion-item ng-repeat="player in players | orderBy:rank" href="#/app/matches/{{match.id}}">
+        <div class="row noPadding">
+          <div class="col col-25 noPadding">{{player.rank}}</div>
+          <div class="col noPadding"> {{player.name}}</div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-scroll>
+
+  <button class="button button-positive noPadding" ng-click="openModal()">
+    Drop From Tournament
+  </button>
+</div>
+
+</ion-view>

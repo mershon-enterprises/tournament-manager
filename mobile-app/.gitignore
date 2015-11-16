@@ -1,0 +1,11 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+
+node_modules/
+platforms/
+plugins/
+mobile-app/www/lib/angular
+mobile-app/www/lib/angular-animate
+mobile-app/www/lib/angular-sanitize
+mobile-app/www/lib/angular-ui-router
+mobile-app/www/lib/ionic

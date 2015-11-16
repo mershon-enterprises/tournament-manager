@@ -1,0 +1,35 @@
+<ion-view view-title="{{match.title}}">
+  <ion-nav-buttons side="left">
+   <button class="button button-clear" ng-click="$ionicGoBack()"><i class="icon ion-arrow-left-b" ></i> Back</button>
+  </ion-nav-buttons>
+  <ion-content>
+
+    <h1>{{match.title}}</h1>
+    <div class="row">
+
+       <div class="col"><img src="img/avatar.jpg"/><br>{{match.player1.name}}
+       </div>
+       <div class="col vs col-25">VS
+       </div>
+       <div class="col"><img src="img/avatar.jpg"/><br>{{match.player2.name}}
+       </div>
+    </div>
+
+    <h2>{{match.table}}</h2>
+
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <a class="button button-positive" ng-href="#/app/matches/{{match.id}}/report">Report Match</a>
+      </div>
+      <div class="col">
+          <h4>Time Remaining in round<h4>
+          <h2 class="red">00:00</h2>
+      </div>
+    </div>
+
+    
+
+  </ion-content>
+</ion-view>

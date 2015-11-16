@@ -1,0 +1,22 @@
+<ion-view view-title="Matches" style="margin-top:55px">
+  <div style="margin-top:8vh">
+  <ion-scroll class="listBox" zooming="false" direction="xy">
+    <ion-list >
+      <ion-item ng-repeat="match in matches | orderBy:predicate:reverse" href="#/app/matches/{{match.id}}">
+        <div class="row noPadding">
+          <div class="col noPadding">{{match.table}}</div>
+          <div class="col noPadding"> {{match.player1.name}}</div>
+           <div class="col noPadding">VS</div>
+          <div class="col noPadding">{{match.player2.name}}</div>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-scroll>
+
+  <button class="button button-positive" ng-click="changeSortMethod()">
+    Change Sort ({{predicate}})
+  </button>
+</div>
+
+
+</ion-view>
