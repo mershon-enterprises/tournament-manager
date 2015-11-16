@@ -45,3 +45,7 @@ textarea{
   background-color: white;
   color: black;
 }
+
+h2.red{
+  color: red;
+}

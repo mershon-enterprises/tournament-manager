@@ -88,4 +88,25 @@ angular.module('starter.controllers', [])
 
 .controller('MatchCtrl', function($scope, match) {
   $scope.match = match;
+  $scope.temp1Wins = 0;
+  $scope.temp2Wins = 0;
+  $scope.tempdraws = 0;
+
+
+  $scope.go = function ( path ) {
+    $location.path( path );
+  };
+
+  $scope.incrementScore = function(counter,val) {
+    if(counter === 0){
+      $scope.temp1Wins = val;
+    }
+    if(counter === 1){
+      $scope.temp2Wins = val;
+    }
+    if(counter === 2){
+      $scope.tempdraws = val;
+    }
+  };
+
 });

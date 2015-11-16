@@ -97,6 +97,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-pullup'])
         id: '1',
         title: 'Game 1',
         table: 'Table 1',
+        player1Wins: 0,
+        player2Wins: 0,
+        draws: 0,
         player1: {name: 'Gomez'},
         player2: {name: 'Dot'}
       },
@@ -104,6 +107,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-pullup'])
         id: '2',
         title: 'Game 2',
         table: 'Table 2',
+        player1Wins: 0,
+        player2Wins: 0,
+        draws: 0,
         player1: {name: 'Max'},
         player2: {name: 'Chloe'}
       },
@@ -111,6 +117,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-pullup'])
         id: '3',
         title: 'Game 3',
         table: 'Table 3',
+        player1Wins: 0,
+        player2Wins: 0,
+        draws: 0,
         player1: {name: 'David'},
         player2: {name: 'Huey'}
       },
@@ -118,6 +127,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-pullup'])
         id: '4',
         title: 'Game 4',
         table: 'Table 4',
+        player1Wins: 0,
+        player2Wins: 0,
+        draws: 0,
         player1: {name: 'Rhys'},
         player2: {name: 'Sasha'}
       },
@@ -125,6 +137,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-pullup'])
         id: '5',
         title: 'Game 5',
         table: 'Table 5',
+        player1Wins: 0,
+        player2Wins: 0,
+        draws: 0,        
         player1: {name: 'Smith'},
         player2: {name: 'Samantha'}
       }
@@ -230,7 +245,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic-pullup'])
         }
       }
     }
+  })
+
+  .state('app.report', {
+    url: '/matches/:match/report',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/report-match.html',
+        controller: 'MatchCtrl',
+        resolve: {
+          match: function($stateParams, MatchesService) {
+            return MatchesService.getMatch($stateParams.match);
+          }
+        }
+      }
+    }
   });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/matches');
 });

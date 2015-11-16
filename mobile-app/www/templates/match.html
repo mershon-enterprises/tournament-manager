@@ -1,4 +1,7 @@
 <ion-view view-title="{{match.title}}">
+  <ion-nav-buttons side="left">
+   <button class="button button-clear" ng-click="$ionicGoBack()"><i class="icon ion-arrow-left-b" ></i> Back</button>
+  </ion-nav-buttons>
   <ion-content>
 
     <h1>{{match.title}}</h1>
@@ -14,9 +17,19 @@
 
     <h2>{{match.table}}</h2>
 
-    <button class="button button-positive" ng-click="$ionicGoBack()">
-      Back
-    </button>
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <a class="button button-positive" ng-href="#/app/matches/{{match.id}}/report">Report Match</a>
+      </div>
+      <div class="col">
+          <h4>Time Remaining in round<h4>
+          <h2 class="red">00:00</h2>
+      </div>
+    </div>
+
+    
 
   </ion-content>
 </ion-view>
